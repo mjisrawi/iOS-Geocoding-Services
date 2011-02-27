@@ -1,5 +1,6 @@
 /*
- *  AddressComponents.m
+ *  MJGeocodingServices.h
+ *  Gecoding Services Header
  *
  *
 	Copyright (c) 2011, Mohammed Jisrawi
@@ -33,42 +34,6 @@
  */
 
 
+#import "MJGeocoder.h"
+#import "MJReverseGeocoder.h"
 #import "AddressComponents.h"
-
-
-@implementation AddressComponents
-
-@synthesize title, fullAddress, streetNumber, route, city, stateCode, postalCode, countryName, coordinate;
-
-
-/*
- *	Finds an address component of a specific type inside the given address components array
- */
-+ (NSString *)addressComponent:(NSString *)component inAddressArray:(NSArray *)array ofType:(NSString *)type{
-	int index = [array indexOfObjectPassingTest:^(id obj, NSUInteger idx, BOOL *stop){
-		if([(NSString *)([[obj objectForKey:@"types"] objectAtIndex:0]) isEqualToString:component]){
-			return YES;
-		}else {
-			return NO;
-		}
-	}];
-	
-	if(index == NSNotFound) return nil;
-	
-	return [[array objectAtIndex:index] valueForKey:type];
-}
-
-
-- (void)dealloc{
-	[title release];
-	[fullAddress release];
-	[streetNumber release];
-	[route release];
-	[city release];
-	[stateCode release];
-	[postalCode release];
-	[countryName release];
-	[super dealloc];
-}
-
-@end

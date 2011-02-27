@@ -1,0 +1,12 @@
+--WHAT--------
+Custom iOS geocoding and reverse geocoding services that call Google's JSON geocoding services directly.
+
+
+--WHY---------
+- To avoid a long-standing, random failure condition in MKReverseGeocoder, possibly due to usage of old APIs, or hitting a usage limit imposed by Google.
+
+- To provide forward geocoding (find coordinate from location), which is not provided in iOS' standard Location Services.
+
+
+--LICENSE-----
+Everything is released under the BSD License, all code is free to use in any projects (check out the files for more details)

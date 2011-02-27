@@ -329,7 +329,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>D0CD0396131A53A10089C6F7</string>
+										<string>D0CD03AE131A58410089C6F7</string>
 										<key>history</key>
 										<array>
 											<string>D0CD0327131A3BA20089C6F7</string>
@@ -346,7 +346,7 @@
 											<string>D0CD0373131A498C0089C6F7</string>
 											<string>D0CD0374131A498C0089C6F7</string>
 											<string>D0CD0375131A498C0089C6F7</string>
-											<string>D0CD0377131A498C0089C6F7</string>
+											<string>D0CD0396131A53A10089C6F7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -358,14 +358,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1124, 430}}</string>
+								<string>{{0, 0}, {1124, 422}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 139 1440 739 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>430pt</string>
+							<string>422pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -378,14 +378,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 435}, {1124, 263}}</string>
+								<string>{{0, 427}, {1124, 271}}</string>
 								<key>RubberWindowFrame</key>
 								<string>0 139 1440 739 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>263pt</string>
+							<string>271pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -404,9 +404,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>D0CD0397131A53A10089C6F7</string>
+				<string>D0CD03AF131A58410089C6F7</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>D0CD0398131A53A10089C6F7</string>
+				<string>D0CD03B0131A58410089C6F7</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -544,9 +544,8 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>D0CD0214131A2F4A0089C6F7</string>
-		<string>/Users/mjisrawi/Dev/GITREPS/iPhone-Geocoding-Services/iPhoneGeocodingServices.xcodeproj</string>
+		<string>/Users/mjisrawi/Dev/GITREPS/iOS-Geocoding-Services/iPhoneGeocodingServices.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 139 1440 739 0 0 1440 878 </string>
@@ -626,7 +625,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>D0CD0214131A2F4A0089C6F7</string>
-				<string>D0CD0399131A53A10089C6F7</string>
+				<string>D0CD03B1131A58410089C6F7</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>

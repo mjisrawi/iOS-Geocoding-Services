@@ -2,16 +2,16 @@
 {
 	1D3623240D0F684500981E51 /* iPhoneGeocodingServicesAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1063, 381}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 579}";
+			sepNavIntBoundsRect = "{{0, 0}, {1063, 572}}";
+			sepNavSelRange = "{0, 1551}";
+			sepNavVisRange = "{0, 1483}";
 		};
 	};
 	1D3623250D0F684500981E51 /* iPhoneGeocodingServicesAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1965, 1144}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 812}";
+			sepNavIntBoundsRect = "{{0, 0}, {1063, 1534}}";
+			sepNavSelRange = "{728, 0}";
+			sepNavVisRange = "{0, 1483}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* iPhoneGeocodingServices */ = {
@@ -24,7 +24,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1063, 481}}";
 			sepNavSelRange = "{623, 0}";
-			sepNavVisRange = "{47, 1116}";
+			sepNavVisRange = "{47, 1079}";
 		};
 	};
 	28D7ACF70DDB3853001CB0EB /* iPhoneGeocodingServicesViewController.m */ = {
@@ -70,8 +70,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 320492440;
-			PBXWorkspaceStateSaveDate = 320492440;
+			PBXPerProjectTemplateStateSaveDate = 320493622;
+			PBXWorkspaceStateSaveDate = 320493622;
 		};
 		perUserProjectItems = {
 			D0CD020E131A2F4A0089C6F7 = D0CD020E131A2F4A0089C6F7 /* PBXTextBookmark */;
@@ -173,7 +173,8 @@
 			D0CD0375131A498C0089C6F7 = D0CD0375131A498C0089C6F7 /* PBXTextBookmark */;
 			D0CD0376131A498C0089C6F7 = D0CD0376131A498C0089C6F7 /* PBXTextBookmark */;
 			D0CD0377131A498C0089C6F7 = D0CD0377131A498C0089C6F7 /* PBXTextBookmark */;
-			D0CD0396131A53A10089C6F7 /* PBXTextBookmark */ = D0CD0396131A53A10089C6F7 /* PBXTextBookmark */;
+			D0CD0396131A53A10089C6F7 = D0CD0396131A53A10089C6F7 /* PBXTextBookmark */;
+			D0CD03AE131A58410089C6F7 /* PBXTextBookmark */ = D0CD03AE131A58410089C6F7 /* PBXTextBookmark */;
 		};
 		sourceControlManager = D0CD01FA131A2E0B0089C6F7 /* Source Control */;
 		userBuildSettings = {
@@ -186,7 +187,7 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 0;
+		breakpointsEnabled = 1;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -275,11 +276,11 @@
 		vrLen = 1006;
 		vrLoc = 290;
 	};
-	D0CD028C131A30700089C6F7 /* GeocodingServices.h */ = {
+	D0CD028C131A30700089C6F7 /* MJGeocodingServices.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1063, 481}}";
-			sepNavSelRange = "{63, 1481}";
-			sepNavVisRange = "{0, 1548}";
+			sepNavIntBoundsRect = "{{0, 0}, {1063, 520}}";
+			sepNavSelRange = "{63, 1492}";
+			sepNavVisRange = "{0, 1415}";
 		};
 	};
 	D0CD028E131A30700089C6F7 /* JSON.h */ = {
@@ -289,32 +290,53 @@
 			sepNavVisRange = "{0, 1524}";
 		};
 	};
+	D0CD0293131A30700089C6F7 /* SBJsonBase.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1063, 962}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1549}";
+		};
+	};
+	D0CD0296131A30700089C6F7 /* SBJsonParser.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1063, 6565}}";
+			sepNavSelRange = "{67, 1451}";
+			sepNavVisRange = "{0, 1545}";
+		};
+	};
+	D0CD0298131A30700089C6F7 /* SBJsonWriter.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1063, 2938}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1540}";
+		};
+	};
 	D0CD0299131A30700089C6F7 /* MJGeocoder.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1063, 806}}";
-			sepNavSelRange = "{0, 1514}";
-			sepNavVisRange = "{0, 1515}";
+			sepNavIntBoundsRect = "{{0, 0}, {1063, 676}}";
+			sepNavSelRange = "{0, 1527}";
+			sepNavVisRange = "{0, 1459}";
 		};
 	};
 	D0CD029A131A30700089C6F7 /* MJGeocoder.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1063, 1547}}";
-			sepNavSelRange = "{23, 0}";
-			sepNavVisRange = "{0, 1515}";
+			sepNavIntBoundsRect = "{{0, 0}, {1063, 1495}}";
+			sepNavSelRange = "{704, 0}";
+			sepNavVisRange = "{0, 1459}";
 		};
 	};
 	D0CD029B131A30700089C6F7 /* MJReverseGeocoder.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1063, 780}}";
-			sepNavSelRange = "{33, 1481}";
-			sepNavVisRange = "{0, 1522}";
+			sepNavIntBoundsRect = "{{0, 0}, {1063, 793}}";
+			sepNavSelRange = "{711, 0}";
+			sepNavVisRange = "{0, 1466}";
 		};
 	};
 	D0CD029C131A30700089C6F7 /* MJReverseGeocoder.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1063, 1391}}";
-			sepNavSelRange = "{25, 0}";
-			sepNavVisRange = "{766, 1204}";
+			sepNavIntBoundsRect = "{{0, 0}, {1063, 1456}}";
+			sepNavSelRange = "{1568, 0}";
+			sepNavVisRange = "{0, 1497}";
 		};
 	};
 	D0CD02B8131A32E90089C6F7 /* PBXTextBookmark */ = {
@@ -322,7 +344,7 @@
 		fRef = D0CD0299131A30700089C6F7 /* MJGeocoder.h */;
 		name = "MJGeocoder.h: 10";
 		rLen = 0;
-		rLoc = 1555;
+		rLoc = 1569;
 		rType = 0;
 		vrLen = 318;
 		vrLoc = 20;
@@ -332,7 +354,7 @@
 		comments = "Expected specifier-qualifier-list before 'Annotation'";
 		fRef = D0CD029B131A30700089C6F7 /* MJReverseGeocoder.h */;
 		rLen = 1;
-		rLoc = 44;
+		rLoc = 47;
 		rType = 1;
 	};
 	D0CD02BA131A32E90089C6F7 /* PBXTextBookmark */ = {
@@ -340,23 +362,23 @@
 		fRef = D0CD029B131A30700089C6F7 /* MJReverseGeocoder.h */;
 		name = "MJReverseGeocoder.h: 23";
 		rLen = 0;
-		rLoc = 1892;
+		rLoc = 1905;
 		rType = 0;
 		vrLen = 403;
 		vrLoc = 27;
 	};
 	D0CD02BD131A32FF0089C6F7 /* AddressComponents.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1063, 741}}";
-			sepNavSelRange = "{33, 1482}";
-			sepNavVisRange = "{0, 1523}";
+			sepNavIntBoundsRect = "{{0, 0}, {1063, 780}}";
+			sepNavSelRange = "{712, 0}";
+			sepNavVisRange = "{0, 1467}";
 		};
 	};
 	D0CD02BE131A32FF0089C6F7 /* AddressComponents.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1063, 806}}";
-			sepNavSelRange = "{33, 1481}";
-			sepNavVisRange = "{0, 1522}";
+			sepNavIntBoundsRect = "{{0, 0}, {1063, 845}}";
+			sepNavSelRange = "{628, 0}";
+			sepNavVisRange = "{0, 1467}";
 		};
 	};
 	D0CD02C6131A33A40089C6F7 /* PBXTextBookmark */ = {
@@ -364,7 +386,7 @@
 		fRef = D0CD029B131A30700089C6F7 /* MJReverseGeocoder.h */;
 		name = "MJReverseGeocoder.h: 21";
 		rLen = 0;
-		rLoc = 1892;
+		rLoc = 1905;
 		rType = 0;
 		vrLen = 350;
 		vrLoc = 27;
@@ -374,7 +396,7 @@
 		comments = "'annotationToUpdate' undeclared (first use in this function)";
 		fRef = D0CD029C131A30700089C6F7 /* MJReverseGeocoder.m */;
 		rLen = 1;
-		rLoc = 75;
+		rLoc = 79;
 		rType = 1;
 	};
 	D0CD02C8131A33A40089C6F7 /* PBXTextBookmark */ = {
@@ -382,17 +404,17 @@
 		fRef = D0CD029C131A30700089C6F7 /* MJReverseGeocoder.m */;
 		name = "MJReverseGeocoder.m: 54";
 		rLen = 0;
-		rLoc = 3652;
+		rLoc = 3698;
 		rType = 0;
 		vrLen = 639;
 		vrLoc = 2004;
 	};
 	D0CD02CB131A33AF0089C6F7 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = D0CD028C131A30700089C6F7 /* GeocodingServices.h */;
+		fRef = D0CD028C131A30700089C6F7 /* MJGeocodingServices.h */;
 		name = "GeocodingServices.h: 1";
 		rLen = 0;
-		rLoc = 1554;
+		rLoc = 1565;
 		rType = 0;
 		vrLen = 233;
 		vrLoc = 0;
@@ -422,7 +444,7 @@
 		fRef = D0CD029B131A30700089C6F7 /* MJReverseGeocoder.h */;
 		name = "MJReverseGeocoder.h: 30";
 		rLen = 0;
-		rLoc = 2020;
+		rLoc = 2033;
 		rType = 0;
 		vrLen = 644;
 		vrLoc = 0;
@@ -432,7 +454,7 @@
 		fRef = D0CD0299131A30700089C6F7 /* MJGeocoder.h */;
 		name = "MJGeocoder.h: 10";
 		rLen = 0;
-		rLoc = 1555;
+		rLoc = 1569;
 		rType = 0;
 		vrLen = 719;
 		vrLoc = 30;
@@ -472,7 +494,7 @@
 		comments = "'annotationToUpdate' undeclared (first use in this function)";
 		fRef = D0CD029C131A30700089C6F7 /* MJReverseGeocoder.m */;
 		rLen = 1;
-		rLoc = 75;
+		rLoc = 79;
 		rType = 1;
 	};
 	D0CD02D4131A33AF0089C6F7 /* PBXTextBookmark */ = {
@@ -480,7 +502,7 @@
 		fRef = D0CD029C131A30700089C6F7 /* MJReverseGeocoder.m */;
 		name = "MJReverseGeocoder.m: 54";
 		rLen = 0;
-		rLoc = 3655;
+		rLoc = 3701;
 		rType = 0;
 		vrLen = 1613;
 		vrLoc = 1198;
@@ -490,7 +512,7 @@
 		fRef = D0CD029C131A30700089C6F7 /* MJReverseGeocoder.m */;
 		name = "MJReverseGeocoder.m: 54";
 		rLen = 0;
-		rLoc = 3655;
+		rLoc = 3701;
 		rType = 0;
 		vrLen = 1668;
 		vrLoc = 1198;
@@ -620,7 +642,7 @@
 		fRef = D0CD029C131A30700089C6F7 /* MJReverseGeocoder.m */;
 		name = "MJReverseGeocoder.m: 53";
 		rLen = 0;
-		rLoc = 3652;
+		rLoc = 3698;
 		rType = 0;
 		vrLen = 548;
 		vrLoc = 2399;
@@ -630,7 +652,7 @@
 		fRef = D0CD029C131A30700089C6F7 /* MJReverseGeocoder.m */;
 		name = "MJReverseGeocoder.m: 54";
 		rLen = 0;
-		rLoc = 3655;
+		rLoc = 3701;
 		rType = 0;
 		vrLen = 1716;
 		vrLoc = 871;
@@ -682,7 +704,7 @@
 		rLen = 0;
 		rLoc = 0;
 		rType = 0;
-		vrLen = 579;
+		vrLen = 578;
 		vrLoc = 0;
 	};
 	D0CD031B131A39260089C6F7 /* PBXTextBookmark */ = {
@@ -690,7 +712,7 @@
 		fRef = D0CD029B131A30700089C6F7 /* MJReverseGeocoder.h */;
 		name = "MJReverseGeocoder.h: 30";
 		rLen = 0;
-		rLoc = 2020;
+		rLoc = 2033;
 		rType = 0;
 		vrLen = 644;
 		vrLoc = 0;
@@ -760,7 +782,7 @@
 		fRef = D0CD0299131A30700089C6F7 /* MJGeocoder.h */;
 		name = "MJGeocoder.h: 29";
 		rLen = 154;
-		rLoc = 1965;
+		rLoc = 1979;
 		rType = 0;
 		vrLen = 716;
 		vrLoc = 33;
@@ -772,7 +794,7 @@
 		rLen = 0;
 		rLoc = 0;
 		rType = 0;
-		vrLen = 579;
+		vrLen = 578;
 		vrLoc = 0;
 	};
 	D0CD0328131A3BA20089C6F7 /* PBXTextBookmark */ = {
@@ -780,7 +802,7 @@
 		fRef = D0CD029C131A30700089C6F7 /* MJReverseGeocoder.m */;
 		name = "MJReverseGeocoder.m: 54";
 		rLen = 0;
-		rLoc = 3655;
+		rLoc = 3701;
 		rType = 0;
 		vrLen = 1714;
 		vrLoc = 873;
@@ -1040,7 +1062,7 @@
 		fRef = D0CD029C131A30700089C6F7 /* MJReverseGeocoder.m */;
 		name = "MJReverseGeocoder.m: 53";
 		rLen = 0;
-		rLoc = 3652;
+		rLoc = 3698;
 		rType = 0;
 		vrLen = 548;
 		vrLoc = 2399;
@@ -1100,7 +1122,7 @@
 		fRef = D0CD029C131A30700089C6F7 /* MJReverseGeocoder.m */;
 		name = "MJReverseGeocoder.m: 54";
 		rLen = 0;
-		rLoc = 3655;
+		rLoc = 3701;
 		rType = 0;
 		vrLen = 1714;
 		vrLoc = 873;
@@ -1110,7 +1132,7 @@
 		fRef = D0CD029B131A30700089C6F7 /* MJReverseGeocoder.h */;
 		name = "MJReverseGeocoder.h: 30";
 		rLen = 0;
-		rLoc = 2020;
+		rLoc = 2033;
 		rType = 0;
 		vrLen = 644;
 		vrLoc = 0;
@@ -1120,27 +1142,27 @@
 		fRef = D0CD0299131A30700089C6F7 /* MJGeocoder.h */;
 		name = "MJGeocoder.h: 29";
 		rLen = 154;
-		rLoc = 1965;
+		rLoc = 1979;
 		rType = 0;
 		vrLen = 668;
 		vrLoc = 0;
 	};
 	D0CD0365131A48250089C6F7 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = D0CD028C131A30700089C6F7 /* GeocodingServices.h */;
+		fRef = D0CD028C131A30700089C6F7 /* MJGeocodingServices.h */;
 		name = "GeocodingServices.h: 7";
 		rLen = 0;
-		rLoc = 1554;
+		rLoc = 1565;
 		rType = 0;
 		vrLen = 233;
 		vrLoc = 0;
 	};
 	D0CD0366131A48250089C6F7 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = D0CD028C131A30700089C6F7 /* GeocodingServices.h */;
+		fRef = D0CD028C131A30700089C6F7 /* MJGeocodingServices.h */;
 		name = "GeocodingServices.h: 3";
 		rLen = 0;
-		rLoc = 1554;
+		rLoc = 1565;
 		rType = 0;
 		vrLen = 1545;
 		vrLoc = 0;
@@ -1210,18 +1232,18 @@
 		isa = PBXTextBookmark;
 		fRef = D0CD02BD131A32FF0089C6F7 /* AddressComponents.h */;
 		name = "AddressComponents.h: 5";
-		rLen = 1482;
-		rLoc = 33;
+		rLen = 60;
+		rLoc = 1466;
 		rType = 0;
 		vrLen = 1523;
 		vrLoc = 0;
 	};
 	D0CD0371131A498C0089C6F7 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
-		fRef = D0CD028C131A30700089C6F7 /* GeocodingServices.h */;
+		fRef = D0CD028C131A30700089C6F7 /* MJGeocodingServices.h */;
 		name = "GeocodingServices.h: 6";
-		rLen = 1481;
-		rLoc = 63;
+		rLen = 0;
+		rLoc = 62;
 		rType = 0;
 		vrLen = 1548;
 		vrLoc = 0;
@@ -1230,8 +1252,8 @@
 		isa = PBXTextBookmark;
 		fRef = D0CD02BE131A32FF0089C6F7 /* AddressComponents.m */;
 		name = "AddressComponents.m: 5";
-		rLen = 1481;
-		rLoc = 33;
+		rLen = 0;
+		rLoc = 6;
 		rType = 0;
 		vrLen = 1522;
 		vrLoc = 0;
@@ -1240,7 +1262,7 @@
 		isa = PBXTextBookmark;
 		fRef = D0CD0299131A30700089C6F7 /* MJGeocoder.h */;
 		name = "MJGeocoder.h: 1";
-		rLen = 1514;
+		rLen = 1528;
 		rLoc = 0;
 		rType = 0;
 		vrLen = 1515;
@@ -1251,7 +1273,7 @@
 		fRef = D0CD029A131A30700089C6F7 /* MJGeocoder.m */;
 		name = "MJGeocoder.m: 4";
 		rLen = 0;
-		rLoc = 23;
+		rLoc = 17;
 		rType = 0;
 		vrLen = 1515;
 		vrLoc = 0;
@@ -1260,8 +1282,8 @@
 		isa = PBXTextBookmark;
 		fRef = D0CD029B131A30700089C6F7 /* MJReverseGeocoder.h */;
 		name = "MJReverseGeocoder.h: 5";
-		rLen = 1481;
-		rLoc = 33;
+		rLen = 60;
+		rLoc = 1467;
 		rType = 0;
 		vrLen = 1522;
 		vrLoc = 0;
@@ -1271,7 +1293,7 @@
 		fRef = D0CD029C131A30700089C6F7 /* MJReverseGeocoder.m */;
 		name = "MJReverseGeocoder.m: 54";
 		rLen = 0;
-		rLoc = 3655;
+		rLoc = 3701;
 		rType = 0;
 		vrLen = 1714;
 		vrLoc = 873;
@@ -1294,6 +1316,16 @@
 		rLoc = 25;
 		rType = 0;
 		vrLen = 1204;
+		vrLoc = 766;
+	};
+	D0CD03AE131A58410089C6F7 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = D0CD029C131A30700089C6F7 /* MJReverseGeocoder.m */;
+		name = "MJReverseGeocoder.m: 32";
+		rLen = 17;
+		rLoc = 1578;
+		rType = 0;
+		vrLen = 1117;
 		vrLoc = 766;
 	};
 }
