@@ -89,19 +89,19 @@
 		
 		if([status isEqualToString:@"ZERO_RESULTS"])
 		{
-			error = [NSError errorWithDomain:@"FSGeocoderError" code:1 userInfo:nil];
+			error = [NSError errorWithDomain:@"MJGeocoderError" code:1 userInfo:nil];
 		}
 		else if([status isEqualToString:@"OVER_QUERY_LIMIT"])
 		{
-			error = [NSError errorWithDomain:@"FSGeocoderError" code:2 userInfo:nil];
+			error = [NSError errorWithDomain:@"MJGeocoderError" code:2 userInfo:nil];
 		}
 		else if([status isEqualToString:@"REQUEST_DENIED"])
 		{
-			error = [NSError errorWithDomain:@"FSGeocoderError" code:3 userInfo:nil];
+			error = [NSError errorWithDomain:@"MJGeocoderError" code:3 userInfo:nil];
 		}
 		else if([status isEqualToString:@"INVALID_REQUEST"])
 		{
-			error = [NSError errorWithDomain:@"FSGeocoderError" code:4 userInfo:nil];
+			error = [NSError errorWithDomain:@"MJGeocoderError" code:4 userInfo:nil];
 		}
 		
 		[delegate geocoder:self didFailWithError:error];
