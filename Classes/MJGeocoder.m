@@ -42,6 +42,9 @@
 /*
  *	Calls Google's JSON Geocoding Service, builds a table of AddressComponents objects,
  *	and tells the delegate that it was successful or informs the delegate of a failure.
+ *
+ *  address: address to geocode
+ *  title: custom title for location (useful for passing an annotation title on through the AddressComponents object)
  */
 - (void)findLocationsWithAddress:(NSString *)address title:(NSString *)title{
 	//build url string using address query
