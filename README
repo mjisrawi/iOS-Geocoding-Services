@@ -3,7 +3,7 @@ Custom iOS geocoding and reverse geocoding services that call Google's JSON geoc
 
 
 --WHY---------
-- To avoid a long-standing, random failure condition in MKReverseGeocoder, possibly due to usage of old APIs, or hitting a usage limit imposed by Google. A google search will bring up many documented cases of the issue, such as…
+- To avoid a long-standing, random failure condition in MKReverseGeocoder, possibly due to usage of old APIs, or hitting a usage limit imposed by Google. A google search will bring up many documented cases of the issue, such as...
 
 "MKErrorDomain error 4 iPhone" - Stack Overflow
 http://stackoverflow.com/questions/3926164/mkerrordomain-error-4-iphone
