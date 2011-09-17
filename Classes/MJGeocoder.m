@@ -51,7 +51,7 @@
 	NSString *urlString = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?address=%@&sensor=true", address];
 	
 	//build request URL
-	NSURL *requestURL = [[NSURL alloc] initWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	NSURL *requestURL = [[[NSURL alloc] initWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] autorelease];
 	
 	//get response
 	NSString *geocodingResponse = [NSString stringWithContentsOfURL:requestURL encoding:NSUTF8StringEncoding error:nil];
@@ -88,7 +88,7 @@
 		[delegate geocoder:self didFindLocations:results];
 	}else{
 		//if status code is not OK
-		NSError *error;
+		NSError *error = nil;
 		
 		if([status isEqualToString:@"ZERO_RESULTS"])
 		{
