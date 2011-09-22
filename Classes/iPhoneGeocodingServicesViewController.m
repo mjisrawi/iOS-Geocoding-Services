@@ -46,7 +46,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.locationManager = [[[CLLocationManager alloc] init] autorelease];
+	self.locationManager = [[CLLocationManager alloc] init];
 	locationManager.delegate = self;
 	[locationManager startUpdatingLocation];
 }
@@ -127,7 +127,7 @@
 						foundLocation.coordinate.longitude, 
 						foundLocation.coordinate.latitude,
 						[locations count]];
-
+    
 	if([foundCoordinates.text isEqualToString:@"No locations found yet"]){
 		foundCoordinates.text = result;
 	}else{
@@ -136,6 +136,8 @@
 }
 
 - (void)geocoder:(MJGeocoder *)geocoder didFailWithError:(NSError *)error{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+    
 	if([foundCoordinates.text isEqualToString:@"No locations found yet"]){
 		foundCoordinates.text = @"Couldn't geocode location!";
 	}else{
