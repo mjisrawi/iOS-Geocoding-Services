@@ -48,22 +48,75 @@
 }
 
 /*
- *	Calls Google's JSON Reverse Geocoding Service, builds a resulting AddressComponents object
- *	and tells the delegate that it was successful or informs the delegate of a failure.
+ *	Opens a URL Connection and calls Google's JSON reverse geocoding service
  */
 - (void)start{
+    //build url string using coordinate
 	NSString *urlString = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?latlng=%f,%f&sensor=true",
 						   coordinate.latitude, coordinate.longitude];
-	
-	//build request URL
-	NSURL *requestURL = [NSURL URLWithString:urlString];
-	
+    
+    //build request URL
+    NSURL *requestURL = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    
+    //build NSURLRequest
+    NSURLRequest *geocodingRequest=[NSURLRequest requestWithURL:requestURL
+                                                    cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                timeoutInterval:60.0];
+    
+    //create connection and start downloading data
+    NSURLConnection *connection=[[NSURLConnection alloc] initWithRequest:geocodingRequest delegate:self];
+    if(connection){
+        //connection valid, so init data holder
+        receivedData = [[NSMutableData data] retain];
+    }else{
+        //connection failed, tell delegate
+        NSError *error = [NSError errorWithDomain:@"MJGeocoderError" code:5 userInfo:nil];
+        [delegate reverseGeocoder:self didFailWithError:error];
+    }
+}
+
+/*
+ *  Reset data when a new response is received
+ */
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    [receivedData setLength:0];
+}
+
+/*
+ *  Append received data
+ */
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [receivedData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    // inform the user
+    NSLog(@"Connection failed! Error - %@ %@",
+          [error localizedDescription],
+          [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+    
+    [connection release];
+    [receivedData release];
+}
+
+/*
+ *  Called when done downloading response from Google. Builds an AddressComponents object
+ *	and tells the delegate that it was successful or informs the delegate of a failure.
+ */
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
 	//get response
-	NSString *geocodingResponse = [NSString stringWithContentsOfURL:requestURL encoding:NSUTF8StringEncoding error:nil];
-	
+	NSString *geocodingResponse = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+    
+    [connection release];
+    [receivedData release];
+    
 	//result as dictionary dictionary
 	NSDictionary *resultDict = [geocodingResponse JSONValue];
-	
+    [geocodingResponse release];
+    
 	NSString *status = [resultDict valueForKey:@"status"];
 	if([status isEqualToString:@"OK"]){
 		//if successful
@@ -81,7 +134,7 @@
 		[delegate reverseGeocoder:self didFindAddress:resultAddress];
 	}else{
 		//if status code is not OK
-		NSError *error;
+		NSError *error = nil;
 		
 		if([status isEqualToString:@"ZERO_RESULTS"])
 		{

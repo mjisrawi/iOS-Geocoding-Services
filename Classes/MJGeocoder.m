@@ -40,25 +40,82 @@
 @synthesize delegate, results;
 
 /*
- *	Calls Google's JSON Geocoding Service, builds a table of AddressComponents objects,
- *	and tells the delegate that it was successful or informs the delegate of a failure.
+ *	Opens a URL Connection and calls Google's JSON geocoding service
  *
  *  address: address to geocode
  *  title: custom title for location (useful for passing an annotation title on through the AddressComponents object)
  */
 - (void)findLocationsWithAddress:(NSString *)address title:(NSString *)title{
-	//build url string using address query
+    
+    if(title) pinTitle = title;
+    
+    //build url string using address query
 	NSString *urlString = [NSString stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?address=%@&sensor=true", address];
 	
 	//build request URL
-	NSURL *requestURL = [[[NSURL alloc] initWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]] autorelease];
-	
+	NSURL *requestURL = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    
+    //build NSURLRequest
+    NSURLRequest *geocodingRequest=[NSURLRequest requestWithURL:requestURL
+                                                    cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                timeoutInterval:60.0];
+    
+    //create connection and start downloading data
+    NSURLConnection *connection=[[NSURLConnection alloc] initWithRequest:geocodingRequest delegate:self];
+    if(connection){
+        //connection valid, so init data holder
+        receivedData = [[NSMutableData data] retain];
+    }else{        
+        //connection failed, tell delegate
+        NSError *error = [NSError errorWithDomain:@"MJGeocoderError" code:5 userInfo:nil];
+        [delegate geocoder:self didFailWithError:error];
+    }
+    
+}
+
+/*
+ *  Reset data when a new response is received
+ */
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    [receivedData setLength:0];
+}
+
+
+/*
+ *  Append received data
+ */
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [receivedData appendData:data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    // inform the user
+    NSLog(@"Connection failed! Error - %@ %@",
+          [error localizedDescription],
+          [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
+    
+    [connection release];
+    [receivedData release];
+}
+
+/*
+ *  Called when done downloading response from Google. Builds a table of AddressComponents objects
+ *	and tells the delegate that it was successful or informs the delegate of a failure.
+ */
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
 	//get response
-	NSString *geocodingResponse = [NSString stringWithContentsOfURL:requestURL encoding:NSUTF8StringEncoding error:nil];
-	
+	NSString *geocodingResponse = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+    
+    [connection release];
+    [receivedData release];
+    
 	//result as dictionary dictionary
 	NSDictionary *resultDict = [geocodingResponse JSONValue];
-	
+    [geocodingResponse release];
+    
 	NSString *status = [resultDict valueForKey:@"status"];
 	if([status isEqualToString:@"OK"]){
 		//if successful, build results array
@@ -69,7 +126,7 @@
 			NSArray *firstResultAddress = [location objectForKey:@"address_components"];
 			
 			AddressComponents *resultAddress = [[[AddressComponents alloc] init] autorelease];
-			resultAddress.title = title;
+			resultAddress.title = pinTitle;
 			resultAddress.fullAddress = [location valueForKey:@"formatted_address"];
 			resultAddress.streetNumber = [AddressComponents addressComponent:@"street_number" inAddressArray:firstResultAddress ofType:@"long_name"];
 			resultAddress.route = [AddressComponents addressComponent:@"route" inAddressArray:firstResultAddress ofType:@"long_name"];

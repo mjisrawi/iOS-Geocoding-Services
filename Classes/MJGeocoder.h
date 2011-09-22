@@ -41,7 +41,9 @@
 
 @interface MJGeocoder : NSObject {
 	id <MJGeocoderDelegate> delegate;
+    NSMutableData *receivedData;
 	NSMutableArray *results;
+    NSString *pinTitle;
 }
 
 @property (nonatomic, assign) id <MJGeocoderDelegate> delegate;

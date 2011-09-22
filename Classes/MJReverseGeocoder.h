@@ -41,6 +41,7 @@
 @interface MJReverseGeocoder : NSObject {
 	id <MJReverseGeocoderDelegate> delegate;
 	CLLocationCoordinate2D coordinate;
+    NSMutableData *receivedData;
 }
 
 @property (nonatomic, assign) id <MJReverseGeocoderDelegate> delegate;
