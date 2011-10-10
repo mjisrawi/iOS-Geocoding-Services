@@ -1,5 +1,5 @@
 /*
- *  iPhoneGeocodingServicesViewController.h
+ * MJPlacesFinder.h
  *
  *
  Copyright (c) 2011, Mohammed Jisrawi
@@ -32,27 +32,31 @@
  *
  */
 
-#import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
-#import "MJGeocodingServices.h"
 
-@interface iPhoneGeocodingServicesViewController : UITableViewController <CLLocationManagerDelegate, MJReverseGeocoderDelegate, MJGeocoderDelegate, MJPlacesFinderDelegate, UISearchBarDelegate>{
-	CLLocationManager *locationManager;
-	MJReverseGeocoder *reverseGeocoder;
-	MJGeocoder *forwardGeocoder;
-    MJPlacesFinder *placesfinder;
-	
-    UISearchBar *searchBar;
-    NSArray *displayedResults;
+
+#import <CoreLocation/CoreLocation.h>
+#import "Place.h"
+
+@protocol MJPlacesFinderDelegate;
+
+@interface MJPlacesFinder : NSObject {
+	id <MJPlacesFinderDelegate> delegate;
+    NSMutableData *receivedData;
+	NSMutableArray *results;
 }
 
-@property(nonatomic, retain) CLLocationManager *locationManager;
-@property(nonatomic, retain) MJReverseGeocoder *reverseGeocoder;
-@property(nonatomic, retain) MJGeocoder *forwardGeocoder;
-@property(nonatomic, retain) MJPlacesFinder *placesfinder;
+@property (nonatomic, assign) id <MJPlacesFinderDelegate> delegate;
+@property (nonatomic, readonly) NSMutableArray *results;
 
-@property(nonatomic, retain) IBOutlet UISearchBar *searchBar;
-@property(nonatomic, retain) NSArray* displayedResults;
+
+- (void)findPlacesNamed:(NSString *)placeName near:(CLLocationCoordinate2D)center withRadius:(double)radius;
 
 @end
 
+
+@protocol MJPlacesFinderDelegate <NSObject>
+
+- (void)placesFinder:(MJPlacesFinder *)placesFinder didFindPlaces:(NSArray *)places;
+- (void)placesFinder:(MJPlacesFinder *)placesFinder didFailWithError:(NSError *)error;
+
+@end
