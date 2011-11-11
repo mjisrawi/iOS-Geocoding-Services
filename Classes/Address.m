@@ -1,5 +1,5 @@
 /*
- * MJGeocoder.h
+ *  Address.m
  *
  *
 	Copyright (c) 2011, Mohammed Jisrawi
@@ -33,31 +33,56 @@
  */
 
 
-
-#import <CoreLocation/CoreLocation.h>
 #import "Address.h"
 
-@protocol MJGeocoderDelegate;
 
-@interface MJGeocoder : NSObject {
-	id <MJGeocoderDelegate> delegate;
-    NSMutableData *receivedData;
-	NSMutableArray *results;
-    NSString *pinTitle;
+@implementation Address
+
+@synthesize name, fullAddress, streetNumber, route, city, stateCode, postalCode, countryName, coordinate;
+
+- (id)initWithCoordinate:(CLLocationCoordinate2D)c{
+    self = [super init];
+    if(self){
+        coordinate = c;
+    }
+    
+    return self;
 }
 
-@property (nonatomic, assign) id <MJGeocoderDelegate> delegate;
-@property (nonatomic, readonly) NSMutableArray *results;
+/*
+ *	Finds an address component of a specific type inside the given address components array
+ */
++ (NSString *)addressComponent:(NSString *)component inAddressArray:(NSArray *)array ofType:(NSString *)type{
+	int index = [array indexOfObjectPassingTest:^(id obj, NSUInteger idx, BOOL *stop){
+        return [(NSString *)([[obj objectForKey:@"types"] objectAtIndex:0]) isEqualToString:component];
+	}];
+	
+	if(index == NSNotFound) return nil;
+	
+	return [[array objectAtIndex:index] valueForKey:type];
+}
 
 
-- (void)findLocationsWithAddress:(NSString *)address title:(NSString *)title;
+- (NSString *)subtitle{
+	return fullAddress;
+}
 
-@end
+
+- (NSString *)title{
+	return name;
+}
 
 
-@protocol MJGeocoderDelegate <NSObject>
-
-- (void)geocoder:(MJGeocoder *)geocoder didFindLocations:(NSArray *)locations;
-- (void)geocoder:(MJGeocoder *)geocoder didFailWithError:(NSError *)error;
+- (void)dealloc{
+	[name release];
+	[fullAddress release];
+	[streetNumber release];
+	[route release];
+	[city release];
+	[stateCode release];
+	[postalCode release];
+	[countryName release];
+	[super dealloc];
+}
 
 @end

@@ -1,5 +1,5 @@
 /*
- * MJGeocoder.h
+ *  Address.h
  *
  *
 	Copyright (c) 2011, Mohammed Jisrawi
@@ -33,31 +33,31 @@
  */
 
 
+#import <MapKit/MapKit.h>
 
-#import <CoreLocation/CoreLocation.h>
-#import "Address.h"
-
-@protocol MJGeocoderDelegate;
-
-@interface MJGeocoder : NSObject {
-	id <MJGeocoderDelegate> delegate;
-    NSMutableData *receivedData;
-	NSMutableArray *results;
-    NSString *pinTitle;
+@interface Address : NSObject <MKAnnotation>{
+	NSString *name;
+	NSString *fullAddress;
+	NSString *streetNumber;
+	NSString *route;
+	NSString *city;
+	NSString *stateCode;
+	NSString *postalCode;
+	NSString *countryName;
+	CLLocationCoordinate2D coordinate;
 }
 
-@property (nonatomic, assign) id <MJGeocoderDelegate> delegate;
-@property (nonatomic, readonly) NSMutableArray *results;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *fullAddress;
+@property (nonatomic, retain) NSString *streetNumber;
+@property (nonatomic, retain) NSString *route;
+@property (nonatomic, retain) NSString *city;
+@property (nonatomic, retain) NSString *stateCode;
+@property (nonatomic, retain) NSString *postalCode;
+@property (nonatomic, retain) NSString *countryName;
+@property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 
-
-- (void)findLocationsWithAddress:(NSString *)address title:(NSString *)title;
-
-@end
-
-
-@protocol MJGeocoderDelegate <NSObject>
-
-- (void)geocoder:(MJGeocoder *)geocoder didFindLocations:(NSArray *)locations;
-- (void)geocoder:(MJGeocoder *)geocoder didFailWithError:(NSError *)error;
+- (id)initWithCoordinate:(CLLocationCoordinate2D)c;
++ (NSString *)addressComponent:(NSString *)component inAddressArray:(NSArray *)array ofType:(NSString *)type;
 
 @end

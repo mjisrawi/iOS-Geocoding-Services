@@ -122,25 +122,26 @@
 		NSArray *foundLocations = [resultDict objectForKey:@"results"];
 		results = [NSMutableArray arrayWithCapacity:[foundLocations count]];
 		
-		[foundLocations enumerateObjectsUsingBlock:^(id location, NSUInteger index, BOOL *stop) {
+		for (NSDictionary *location in foundLocations) {
 			NSArray *firstResultAddress = [location objectForKey:@"address_components"];
 			
-			AddressComponents *resultAddress = [[[AddressComponents alloc] init] autorelease];
-			resultAddress.title = pinTitle;
+            double lat = [[[[location objectForKey:@"geometry"] objectForKey:@"location"] valueForKey:@"lat"] doubleValue];
+            double lng = [[[[location objectForKey:@"geometry"] objectForKey:@"location"] valueForKey:@"lng"] doubleValue];
+            
+            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(lat, lng);
+			Address *resultAddress = [[[Address alloc] initWithCoordinate:coord] autorelease];
+            
+			resultAddress.name = pinTitle;
 			resultAddress.fullAddress = [location valueForKey:@"formatted_address"];
-			resultAddress.streetNumber = [AddressComponents addressComponent:@"street_number" inAddressArray:firstResultAddress ofType:@"long_name"];
-			resultAddress.route = [AddressComponents addressComponent:@"route" inAddressArray:firstResultAddress ofType:@"long_name"];
-			resultAddress.city = [AddressComponents addressComponent:@"locality" inAddressArray:firstResultAddress ofType:@"long_name"];
-			resultAddress.stateCode = [AddressComponents addressComponent:@"administrative_area_level_1" inAddressArray:firstResultAddress ofType:@"short_name"];
-			resultAddress.postalCode = [AddressComponents addressComponent:@"postal_code" inAddressArray:firstResultAddress ofType:@"short_name"];
-			resultAddress.countryName = [AddressComponents addressComponent:@"country" inAddressArray:firstResultAddress ofType:@"long_name"];
-			
-			resultAddress.coordinate = 
-			CLLocationCoordinate2DMake([[[[location objectForKey:@"geometry"] objectForKey:@"location"] valueForKey:@"lat"] doubleValue],
-									   [[[[location objectForKey:@"geometry"] objectForKey:@"location"] valueForKey:@"lng"] doubleValue]);
+			resultAddress.streetNumber = [Address addressComponent:@"street_number" inAddressArray:firstResultAddress ofType:@"long_name"];
+			resultAddress.route = [Address addressComponent:@"route" inAddressArray:firstResultAddress ofType:@"long_name"];
+			resultAddress.city = [Address addressComponent:@"locality" inAddressArray:firstResultAddress ofType:@"long_name"];
+			resultAddress.stateCode = [Address addressComponent:@"administrative_area_level_1" inAddressArray:firstResultAddress ofType:@"short_name"];
+			resultAddress.postalCode = [Address addressComponent:@"postal_code" inAddressArray:firstResultAddress ofType:@"short_name"];
+			resultAddress.countryName = [Address addressComponent:@"country" inAddressArray:firstResultAddress ofType:@"long_name"];
 			
 			[results addObject:resultAddress];
-		}];
+		}
 		
 		[delegate geocoder:self didFindLocations:results];
 	}else{

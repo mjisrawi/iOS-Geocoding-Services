@@ -138,7 +138,7 @@ static NSString *API_KEY = @"AIzaSyBuF23vB4zl5oQXNEXfrGGMu6mxe6fqw9k";
 
             Place *foundPlace = [[[Place alloc] initWithCoordinate:coord] autorelease];
             [foundPlace setName:[placeResult valueForKey:@"name"]];
-            [foundPlace setAddress:[placeResult valueForKey:@"vicinity"]];
+            [foundPlace setFullAddress:[placeResult valueForKey:@"vicinity"]];
             [foundPlace setGoogleId:[placeResult valueForKey:@"id"]];
             [foundPlace setGoogleIconPath:[placeResult valueForKey:@"icon"]];
             [foundPlace setGoogleRef:[placeResult valueForKey:@"reference"]];

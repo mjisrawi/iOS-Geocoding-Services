@@ -83,15 +83,13 @@
 }
 
 - (void)configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath{
-    if([[displayedResults objectAtIndex:indexPath.row] isKindOfClass:[AddressComponents class]]){
-        AddressComponents *object = [displayedResults objectAtIndex:indexPath.row];
-        cell.textLabel.text = object.fullAddress;
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%f, %f", object.coordinate.latitude, object.coordinate.longitude];
+    Address *object = [displayedResults objectAtIndex:indexPath.row];
+    if([object title]){
+        cell.textLabel.text = [object title];
     }else{
-        Place *object = [displayedResults objectAtIndex:indexPath.row];
-        cell.textLabel.text = object.name;
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%f, %f", object.coordinate.latitude, object.coordinate.longitude];
+        cell.textLabel.text = [object fullAddress];
     }
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%f, %f", object.coordinate.latitude, object.coordinate.longitude];
 }
 
 
@@ -154,7 +152,7 @@
 #pragma mark -
 #pragma mark MJReverseGeocoderDelegate
 
-- (void)reverseGeocoder:(MJReverseGeocoder *)geocoder didFindAddress:(AddressComponents *)addressComponents{
+- (void)reverseGeocoder:(MJReverseGeocoder *)geocoder didFindAddress:(Address *)addressComponents{
 	//hide network indicator
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 	

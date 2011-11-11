@@ -34,7 +34,7 @@
 
 
 #import <CoreLocation/CoreLocation.h>
-#import "AddressComponents.h"
+#import "Address.h"
 
 @protocol MJReverseGeocoderDelegate;
 
@@ -56,7 +56,7 @@
 
 @protocol MJReverseGeocoderDelegate <NSObject>
 
-- (void)reverseGeocoder:(MJReverseGeocoder *)geocoder didFindAddress:(AddressComponents *)addressComponents;
+- (void)reverseGeocoder:(MJReverseGeocoder *)geocoder didFindAddress:(Address *)addressComponents;
 - (void)reverseGeocoder:(MJReverseGeocoder *)geocoder didFailWithError:(NSError *)error;
 
 @end

@@ -37,5 +37,5 @@
 #import "MJGeocoder.h"
 #import "MJReverseGeocoder.h"
 #import "MJPlacesFinder.h"
-#import "AddressComponents.h"
+#import "Address.h"
 #import "Place.h"

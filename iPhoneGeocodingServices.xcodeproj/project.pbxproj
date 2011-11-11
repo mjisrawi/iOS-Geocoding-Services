@@ -17,7 +17,7 @@
 		D05257041442A84F003C300B /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = D05257031442A84F003C300B /* Place.m */; };
 		D05257141442B1ED003C300B /* iPhoneGeocodingServicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D05257121442B1ED003C300B /* iPhoneGeocodingServicesViewController.m */; };
 		D05257151442B1ED003C300B /* iPhoneGeocodingServicesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D05257131442B1ED003C300B /* iPhoneGeocodingServicesViewController.xib */; };
-		D05257281442CCFF003C300B /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D05257271442CCFF003C300B /* Icon@2x.png */; };
+		D096DD0214449CE300347A11 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D096DD0114449CE300347A11 /* Icon@2x.png */; };
 		D0CD0229131A30260089C6F7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0CD0228131A30260089C6F7 /* CoreLocation.framework */; };
 		D0CD029D131A30700089C6F7 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CD0290131A30700089C6F7 /* NSObject+SBJSON.m */; };
 		D0CD029E131A30700089C6F7 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CD0292131A30700089C6F7 /* NSString+SBJSON.m */; };
@@ -26,7 +26,7 @@
 		D0CD02A1131A30700089C6F7 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CD0298131A30700089C6F7 /* SBJsonWriter.m */; };
 		D0CD02A2131A30700089C6F7 /* MJGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CD029A131A30700089C6F7 /* MJGeocoder.m */; };
 		D0CD02A3131A30700089C6F7 /* MJReverseGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CD029C131A30700089C6F7 /* MJReverseGeocoder.m */; };
-		D0CD02BF131A32FF0089C6F7 /* AddressComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CD02BE131A32FF0089C6F7 /* AddressComponents.m */; };
+		D0CD02BF131A32FF0089C6F7 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CD02BE131A32FF0089C6F7 /* Address.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +46,8 @@
 		D05257031442A84F003C300B /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
 		D05257111442B1EC003C300B /* iPhoneGeocodingServicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneGeocodingServicesViewController.h; sourceTree = "<group>"; };
 		D05257121442B1ED003C300B /* iPhoneGeocodingServicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneGeocodingServicesViewController.m; sourceTree = "<group>"; };
-		D05257131442B1ED003C300B /* iPhoneGeocodingServicesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPhoneGeocodingServicesViewController.xib; sourceTree = "<group>"; };
-		D05257271442CCFF003C300B /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		D05257131442B1ED003C300B /* iPhoneGeocodingServicesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = iPhoneGeocodingServicesViewController.xib; path = Classes/iPhoneGeocodingServicesViewController.xib; sourceTree = "<group>"; };
+		D096DD0114449CE300347A11 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		D0CD0228131A30260089C6F7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D0CD028C131A30700089C6F7 /* MJGeocodingServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJGeocodingServices.h; sourceTree = "<group>"; };
 		D0CD028E131A30700089C6F7 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
@@ -65,8 +65,8 @@
 		D0CD029A131A30700089C6F7 /* MJGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJGeocoder.m; sourceTree = "<group>"; };
 		D0CD029B131A30700089C6F7 /* MJReverseGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJReverseGeocoder.h; sourceTree = "<group>"; };
 		D0CD029C131A30700089C6F7 /* MJReverseGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJReverseGeocoder.m; sourceTree = "<group>"; };
-		D0CD02BD131A32FF0089C6F7 /* AddressComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressComponents.h; sourceTree = "<group>"; };
-		D0CD02BE131A32FF0089C6F7 /* AddressComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressComponents.m; sourceTree = "<group>"; };
+		D0CD02BD131A32FF0089C6F7 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
+		D0CD02BE131A32FF0089C6F7 /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +92,6 @@
 				1D3623250D0F684500981E51 /* iPhoneGeocodingServicesAppDelegate.m */,
 				D05257111442B1EC003C300B /* iPhoneGeocodingServicesViewController.h */,
 				D05257121442B1ED003C300B /* iPhoneGeocodingServicesViewController.m */,
-				D05257131442B1ED003C300B /* iPhoneGeocodingServicesViewController.xib */,
-				D05257271442CCFF003C300B /* Icon@2x.png */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -131,7 +129,9 @@
 			isa = PBXGroup;
 			children = (
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				D05257131442B1ED003C300B /* iPhoneGeocodingServicesViewController.xib */,
 				8D1107310486CEB800E47090 /* iPhoneGeocodingServices-Info.plist */,
+				D096DD0114449CE300347A11 /* Icon@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -170,8 +170,8 @@
 			children = (
 				D0CD028D131A30700089C6F7 /* JSON */,
 				D0CD028C131A30700089C6F7 /* MJGeocodingServices.h */,
-				D0CD02BD131A32FF0089C6F7 /* AddressComponents.h */,
-				D0CD02BE131A32FF0089C6F7 /* AddressComponents.m */,
+				D0CD02BD131A32FF0089C6F7 /* Address.h */,
+				D0CD02BE131A32FF0089C6F7 /* Address.m */,
 				D05257021442A84F003C300B /* Place.h */,
 				D05257031442A84F003C300B /* Place.m */,
 				D0CD0299131A30700089C6F7 /* MJGeocoder.h */,
@@ -210,6 +210,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Mohammed Jisrawi";
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iPhoneGeocodingServices" */;
@@ -238,7 +239,7 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				D05257151442B1ED003C300B /* iPhoneGeocodingServicesViewController.xib in Resources */,
-				D05257281442CCFF003C300B /* Icon@2x.png in Resources */,
+				D096DD0214449CE300347A11 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +259,7 @@
 				D0CD02A1131A30700089C6F7 /* SBJsonWriter.m in Sources */,
 				D0CD02A2131A30700089C6F7 /* MJGeocoder.m in Sources */,
 				D0CD02A3131A30700089C6F7 /* MJReverseGeocoder.m in Sources */,
-				D0CD02BF131A32FF0089C6F7 /* AddressComponents.m in Sources */,
+				D0CD02BF131A32FF0089C6F7 /* Address.m in Sources */,
 				D05256F814429E9D003C300B /* MJPlacesFinder.m in Sources */,
 				D05257041442A84F003C300B /* Place.m in Sources */,
 				D05257141442B1ED003C300B /* iPhoneGeocodingServicesViewController.m in Sources */,
@@ -305,7 +306,6 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -319,7 +319,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Release;

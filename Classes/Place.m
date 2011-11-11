@@ -10,29 +10,9 @@
 
 @implementation Place
 
-@synthesize coordinate, name, address, googleId, googleIconPath, googleRef, rating, types;
-
-- (id)initWithCoordinate:(CLLocationCoordinate2D)c{
-    self = [super init];
-    if(self){
-        coordinate = c;
-    }
-    
-    return self;
-}
-
-
-- (NSString *)subtitle{
-	return address;
-}
-
-- (NSString *)title{
-	return name;
-}
+@synthesize googleId, googleIconPath, googleRef, rating, types;
 
 - (void)dealloc{
-    [name release];
-    [address release];
     [googleId release];
     [googleIconPath release];
     [googleRef release];
