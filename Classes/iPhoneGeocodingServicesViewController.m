@@ -2,33 +2,33 @@
  *  iPhoneGeocodingServicesViewController.m
  *
  *
- Copyright (c) 2011, Mohammed Jisrawi
- All rights reserved.
- 
- Redistribution and use in source and binary forms, with or without
- modification, are permitted provided that the following conditions are met:
- 
- * Redistributions of source code must retain the above copyright
- notice, this list of conditions and the following disclaimer.
- 
- * Redistributions in binary form must reproduce the above copyright
- notice, this list of conditions and the following disclaimer in the
- documentation and/or other materials provided with the distribution.
- 
- * Neither the name of the Mohammed Jisrawi nor the
- names of its contributors may be used to endorse or promote products
- derived from this software without specific prior written permission.
- 
- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
- ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
- WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
- DISCLAIMED. IN NO EVENT SHALL MOHAMMED JISRAWI BE LIABLE FOR ANY
- DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
- (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
- LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
- ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
- SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+     Copyright (c) 2011, Mohammed Jisrawi
+     All rights reserved.
+     
+     Redistribution and use in source and binary forms, with or without
+     modification, are permitted provided that the following conditions are met:
+     
+     * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+     
+     * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution.
+     
+     * Neither the name of the Mohammed Jisrawi nor the
+     names of its contributors may be used to endorse or promote products
+     derived from this software without specific prior written permission.
+     
+     THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+     ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+     WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+     DISCLAIMED. IN NO EVENT SHALL MOHAMMED JISRAWI BE LIABLE FOR ANY
+     DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+     (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+     LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+     ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+     (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+     SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
 
@@ -83,13 +83,13 @@
 }
 
 - (void)configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath{
-    Address *object = [displayedResults objectAtIndex:indexPath.row];
-    if([object title]){
-        cell.textLabel.text = [object title];
+    Address *address = [displayedResults objectAtIndex:indexPath.row];
+    if([address title]){
+        cell.textLabel.text = [address title];
     }else{
-        cell.textLabel.text = [object fullAddress];
+        cell.textLabel.text = [address fullAddress];
     }
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%f, %f", object.coordinate.latitude, object.coordinate.longitude];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%f, %f", address.coordinate.latitude, address.coordinate.longitude];
 }
 
 
@@ -169,6 +169,12 @@
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 	
 	searchBar.prompt = @"Couldn't reverse geocode coordinate!";
+    
+    NSLog(@"REVERSE GEOCODE ERROR CODE: %d", [error code]);
+    
+    if([error code] == 1){
+        NSLog(@"NO REVERSE GEOCODE RESULTS");
+    }
 }
 
 
@@ -188,7 +194,19 @@
 - (void)geocoder:(MJGeocoder *)geocoder didFailWithError:(NSError *)error{
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
-    NSLog(@"ERROR");
+    NSLog(@"GEOCODE ERROR CODE: %d", [error code]);
+    
+    if([error code] == 1){
+        NSLog(@"NO GEOCODE RESULTS");
+        
+        [displayedResults release];
+        displayedResults = nil;
+        [self.tableView reloadData];
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No results found. :(" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        [alertView release];
+    }
 }
 
 
@@ -208,7 +226,29 @@
 - (void)placesFinder:(MJPlacesFinder *)placesFinder didFailWithError:(NSError *)error{
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
-    NSLog(@"ERROR");
+    NSLog(@"PLACE SEARCH ERROR CODE: %d", [error code]);
+    
+    if([error code] == 1){
+        NSLog(@"NO PLACE RESULTS");
+
+        [displayedResults release];
+        displayedResults = nil;
+        [self.tableView reloadData];
+                
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No results found. :(" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        [alertView release];
+    }else if([error code] == 6){
+        NSLog(@"%@", [error localizedDescription]);
+        
+        [displayedResults release];
+        displayedResults = nil;
+        [self.tableView reloadData];
+        
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:[error localizedDescription] message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        [alertView release];
+    }
 }
 
 #pragma mark -
