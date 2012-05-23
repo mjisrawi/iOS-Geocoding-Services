@@ -40,8 +40,8 @@
 @synthesize delegate, results;
 
 //IMPORTANT: fill in your OWN API key!!
-//#define API_KEY @"<YOUR_API_KEY_HERE>"
-#define API_KEY @"AIzaSyBuF23vB4zl5oQXNEXfrGGMu6mxe6fqw9k"
+//You can generate your own key at http://code.google.com/apis/console
+#define API_KEY @"<YOUR_API_KEY_HERE>"
 
 /*
  *	Opens a URL Connection and calls the Google Places API
@@ -52,7 +52,7 @@
  */
 - (void)findPlacesNamed:(NSString *)placeName near:(CLLocationCoordinate2D)center withRadius:(double)radius{
     
-    //check if dummy API key has been set
+    //check if dummy API key hasn't been replaced
     if([API_KEY isEqualToString:@"<YOUR_API_KEY_HERE>"]){
         NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"Undefined API key!" forKey:NSLocalizedDescriptionKey];
         NSError *error = [NSError errorWithDomain:@"MJPlacesFinderError" code:6 userInfo:userInfo];

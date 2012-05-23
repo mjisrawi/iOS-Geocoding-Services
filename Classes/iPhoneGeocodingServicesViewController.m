@@ -32,7 +32,6 @@
  *
  */
 
-
 #import "iPhoneGeocodingServicesViewController.h"
 
 @interface iPhoneGeocodingServicesViewController()
@@ -250,6 +249,7 @@
         [alertView release];
     }
 }
+
 
 #pragma mark -
 #pragma mark dealloc
