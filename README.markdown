@@ -7,7 +7,7 @@ A suite of Objective-C hooks for Google's location APIs.
 
 
 ###Why
-- Provides in iOS versions before 5.0.
+- Provides forward geocoding in iOS versions before 5.0.
 - Provides Google places search
 - Also previously: to avoid a long-standing, random failure condition in MKReverseGeocoder, possibly due to usage of old APIs, or hitting a usage limit imposed by Google. A google search will bring up many documented cases of the issue, such as...
 
